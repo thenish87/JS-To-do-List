@@ -1,0 +1,210 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ body {
+     background: url('https://www.transparenttextures.com/patterns/cubes.png'), #15274a;
+     font-family: 'Poppins', sans-serif;
+     background-color: #1a1a2e;
+     color: #e0e0e0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     margin: 0;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+
+ .container {
+     background-color: #211c47;
+     padding: 20px;
+     border-radius: 15px;
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+     width: 100%;
+     max-width: 350px;
+     border: 1px solid rgba(255, 255, 255, 0.18);
+ }
+
+ .todo-header {
+     margin-bottom: 20px;
+ }
+
+ .todo-header h1 {
+     font-size: 1.8em;
+     margin: 0;
+     color: #ffffff;
+ }
+
+ .todo-header p {
+     font-size: 0.8em;
+     margin: 0;
+     color: #a0a0a0;
+ }
+
+ .input-section {
+     display: flex;
+     margin-bottom: 20px;
+     background-color: #2e285f;
+     border-radius: 8px;
+     overflow: hidden;
+     padding: 3px;
+ }
+
+ #inputTask {
+     flex-grow: 1;
+     border: none;
+     background: transparent;
+     padding: 10px 12px;
+     font-size: 0.9em;
+     color: #e0e0e0;
+     outline: none;
+ }
+
+ #inputTask::placeholder {
+     color: #888;
+ }
+
+ #addTaskBtn {
+     background-color: #6a5acd;
+     border: none;
+     color: white;
+     padding: 10px 15px;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 1em;
+     transition: background-color 0.3s ease;
+ }
+
+ #addTaskBtn:hover {
+     background-color: #5a4aa0;
+ }
+
+ .delete-btn i {
+     font-size: 1em;
+     color: #fff;
+     margin-right: 4px;
+     pointer-events: none;
+ }
+
+ #addTaskBtn i {
+     margin-right: 4px;
+ }
+
+ #taskList {
+     list-style: none;
+     padding: 0;
+     min-height: 100px;
+     padding-top: 10px;
+ }
+
+ #taskList li {
+     background-color: #29245c;
+     display: flex;
+     align-items: center;
+     padding: 12px 15px;
+     margin-bottom: 8px;
+     border-radius: 8px;
+     font-size: 1em;
+     color: #e0e0e0;
+     transition: background-color 0.3s ease;
+     justify-content: space-between;
+ }
+
+ #taskList li:hover {
+     background-color: #37306e;
+ }
+
+ .task-btn {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+ }
+
+ .check-btn {
+     background-color: #6a5acd;
+     color: #ffffff;
+     border: none;
+     padding: 6px 10px;
+     border-radius: 50%;
+     cursor: pointer;
+     font-size: 0.9em;
+ }
+
+ #taskList li span {
+     margin-left: 10px;
+     font-size: 0.95em;
+ }
+
+ .completed span {
+     text-decoration: line-through;
+     color: #aaa;
+ }
+
+ .delete-btn {
+     background-color: #ff4d4d;
+     border: none;
+     color: white;
+     padding: 6px 10px;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 0.9em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background-color 0.3s ease;
+ }
+
+ .delete-btn:hover {
+     background-color: #cc0000;
+ }
+
+ @media (max-width: 600px) {
+     .container {
+         padding: 20px;
+     }
+
+     .todo-header h1 {
+         font-size: 1.8em;
+     }
+
+     .input-section {
+         flex-direction: column;
+         align-items: stretch;
+     }
+
+     #addTaskBtn {
+         margin-top: 10px;
+         width: 100%;
+     }
+
+     #taskList li {
+         flex-wrap: wrap;
+         font-size: 1em;
+     }
+
+     .task-btn {
+         width: 100%;
+         justify-content: space-between;
+         margin-top: 10px;
+     }
+ }
+
+ #inputTask.placeholder-error::placeholder {
+     color: #ff6b6b;
+ }
+
+ .task-checkbox {
+     width: 22px;
+     height: 22px;
+     border: 1.5px solid #6a5acd;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: transparent;
+     transition: all 0.3s ease;
+ }
+
+ .task-checkbox i {
+     font-size: 0.9em;
+     color: #4CAF50;
+ }

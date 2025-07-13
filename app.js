@@ -1,0 +1,50 @@
+var tasks = [];
+
+function renderTasks() {
+var taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+  for (let i = 0; i < tasks.length; i++) {
+    var task = tasks[i];
+    // Add the task to the task list
+    taskList.innerHTML += createTaskListItem(task, i);
+  }
+}
+
+function createTaskListItem(task, index) {
+  return `
+    <li>
+      <div class="task-btn">
+        <span class="task-text">${task.text}</span>
+      </div>
+      <button class="delete-btn" onclick="deleteTask(${index})">
+        <i class="fas fa-trash"></i>
+      </button>
+    </li>
+  `;
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  renderTasks();
+}
+
+function addTask() {
+  var inputTask = document.getElementById('inputTask');
+  var text = inputTask.value.trim();
+
+  if (text === '')
+    return;
+  tasks.push({ text });
+  inputTask.value = '';
+  renderTasks();
+}
+
+// Event listener to add task on Enter key press
+document.getElementById('inputTask').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    addTask();
+  }
+});
+
+// Add event listener to the add task button
+document.getElementById('addTaskBtn').addEventListener('click', addTask);

@@ -16,11 +16,23 @@ function createTaskListItem(task, index) {
       <div class="task-btn">
         <span class="task-text">${task.text}</span>
       </div>
+      <button class="edit-btn" onclick="editTask(${index})">
+        <i class="fas fa-edit"></i>
+      </button>
       <button class="delete-btn" onclick="deleteTask(${index})">
         <i class="fas fa-trash"></i>
       </button>
     </li>
   `;
+}
+
+function editTask(index) {
+  var task = tasks[index];
+  var newText = prompt("Enter new task text:", task.text);
+  if (newText !== null && newText.trim() !== '') {
+    tasks[index].text = newText;
+    renderTasks();
+  }
 }
 
 function deleteTask(index) {

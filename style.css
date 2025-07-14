@@ -89,6 +89,24 @@
      margin-right: 4px;
  }
 
+ .edit-btn {
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 6px 10px;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 0.9em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background-color 0.3s ease;
+ }
+
+ .edit-btn:hover {
+     background-color: #3e8e41;
+ }
+
  #taskList {
      list-style: none;
      padding: 0;
